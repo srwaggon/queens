@@ -1,8 +1,17 @@
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class QueenTest {
+
+  @Test
+  public void canAttack_ReturnsFalse_QueenCannotAttackHerself() {
+    Queen queen1 = new Queen(0, 0);
+
+    assertFalse(queen1.canAttack(queen1));
+    assertFalse(queen1.canAttack(queen1));
+  }
 
   @Test
   public void canAttack_FalseWhenQueensAreNotNearby() {

@@ -55,4 +55,10 @@ class Board {
     return getAllQueens().stream()
         .anyMatch(queen -> queen.getX() == x && queen.getY() == y);
   }
+
+  boolean isValid() {
+    List<Queen> allQueens = getAllQueens();
+    return allQueens.stream().noneMatch(queen0 -> allQueens.stream().anyMatch(queen0::canAttack));
+  }
+
 }

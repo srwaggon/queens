@@ -19,7 +19,7 @@ class Queen {
   }
 
   boolean canAttack(Queen other) {
-    return this.x == other.x || this.y == other.y || Math.abs(this.x - other.x) == Math.abs(this.y - other.y);
+    return this != other && (this.x == other.x || this.y == other.y || Math.abs(this.x - other.x) == Math.abs(this.y - other.y));
   }
 
   int getX() {
