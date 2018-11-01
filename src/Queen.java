@@ -22,11 +22,11 @@ class Queen {
     return this.x == other.x || this.y == other.y || Math.abs(this.x - other.x) == Math.abs(this.y - other.y);
   }
 
-  public int getX() {
+  int getX() {
     return x;
   }
 
-  public int getY() {
+  int getY() {
     return y;
   }
 }

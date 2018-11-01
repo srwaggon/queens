@@ -4,8 +4,9 @@ public class Main {
 
     Board board = new Board();
 
-    System.out.println(board.toString());
+    board = board.placeQueenAt(0, 0);
 
+    System.out.println(board);
   }
 
 }

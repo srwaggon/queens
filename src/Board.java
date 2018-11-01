@@ -15,7 +15,7 @@ class Board {
     this.queen = queen;
   }
 
-  public Board placeQueenAt(int x, int y) {
+  Board placeQueenAt(int x, int y) {
     if (x < 0 || 7 < x) {
       return this;
     }
@@ -32,6 +32,7 @@ class Board {
     Board next = this;
     while (next.board.isPresent()) {
       acc.add(next.queen);
+      next = next.board.get();
     }
     return acc;
   }
