@@ -27,7 +27,7 @@ class Board {
     return new Board(this, new Queen(x, y));
   }
 
-  private List<Queen> getAllQueens() {
+  List<Queen> getAllQueens() {
     List<Queen> acc = new LinkedList<>();
     Board next = this;
     while (next.board.isPresent()) {
@@ -39,9 +39,7 @@ class Board {
 
   @Override
   public String toString() {
-
     StringBuilder result = new StringBuilder();
-
     for (int y = 0; y < 8; y++) {
       for (int x = 0; x < 8; x++) {
         result.append(isOccupied(x, y) ? "[Q]" : "[ ]");
@@ -56,9 +54,6 @@ class Board {
         .anyMatch(queen -> queen.getX() == x && queen.getY() == y);
   }
 
-  boolean isValid() {
-    List<Queen> allQueens = getAllQueens();
-    return allQueens.stream().noneMatch(queen0 -> allQueens.stream().anyMatch(queen0::canAttack));
-  }
+
 
 }
